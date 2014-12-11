@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-1.11.1.js"></script>
+    <script src="js/scripts.js"></script>
+    <title>Weekdays in a Month</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Find the dates of your favorite weekday in a month for any year.</h1>
+
+      <form id="selectDate">
+        <div class="form-group">
+          <label for="date">Enter your day, month, and year separated with a space:</label>
+          <input id="date" type="text">
+        </div>
+
+        <button type="submit" class="btn">Get Dates!</button>
+      </form>
+
+      <div id="result1">
+        <p> The dates of your favorite weekday on the specified year will be: <span class="dates"></span>.</p>
+      </div>
+      <div id="result2">
+        <p> You have entered an invalid day, month, or year.</p>
+      </div>
+    </div>
+  </body>
+</html>
