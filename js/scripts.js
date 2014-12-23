@@ -155,38 +155,50 @@ var getWeekdaysInMonth = function(day,month,year){
 	
 
 $(document).ready(function(){
-  $("form#selectDate").submit(function(event){
-  	var inputInfo = $("#date").val();
-  	var inputInfo = inputInfo.toLowerCase();
-  	var arr1 = inputInfo.split(" ");
+  $("#add").on('click', function(){
+  	var inputInfo = $("#focusedInput").val();
+  	$("#focusedInput").focus();
+  	if(inputInfo.length > 0){
+  	  var passedInfo = inputInfo.toLowerCase();
+  	  var arr1 = passedInfo.split(" ");
 
-  	var day = arr1[0];
-  	var month = arr1[1];
-  	var year = arr1[2];
+  	  var day = arr1[0];
+  	  var month = arr1[1];
+  	  var year = arr1[2];
   	
-  	var checkDay = getWeekdayVal(day);
-  	var checkMonth = numericalMonth(month);
-  	var checkYear = reviewYear(year);
+  	  var checkDay = getWeekdayVal(day);
+  	  var checkMonth = numericalMonth(month);
+  	  var checkYear = reviewYear(year);
 
-  	if(checkDay === false || checkMonth === false || checkYear === false){
-  		$("#date").val("");
-  		$("#result2").show();
-  		$("#result1").hide();
+  	  if(checkDay === false || checkMonth === false || checkYear === false){
+  		$("#focusedInput").val("");
+  		$("#result2").show().hide().slideDown();
+  		$("#result1").slideUp().hide();
   		}
-  	else{
+  	  else{
 
   		
   	  	var theDates = getWeekdaysInMonth(day,month,year);
-
+  	  	$(".record").text(inputInfo);
 	  	$(".dates").text(theDates);
-	  	$("#date").val("");
-		$("#result1").show();
-		$("#result2").hide();
+	  	$("#focusedInput").val("");
+		$("#result1").show().hide().slideDown();
+		$("#result2").slideUp().hide();
 		
-	}
-	
-	event.preventDefault();
+	  }
+	 }
 
+	 else{
+	 	alert("Please Enter the Required Information")
+	 }
+	 
 
   });
+
+  	 $("#focusedInput").on('keypress', function(e){
+		if (e.keyCode == '13'){
+		  $("#add").click();
+			}
+	  });
+
 });	

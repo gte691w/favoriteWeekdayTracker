@@ -2,13 +2,43 @@
 <html>
   <head>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-1.11.1.js"></script>
     <script src="js/scripts.js"></script>
+    <script src="js/bootstrap.min.js"></script> 
     <title>Weekdays in a Month</title>
   </head>
   <body>
     <div class="container">
+      <div class="row header_row">
+          <h1 class="display">Favorite Weekday in a Month Locator</h1>
+      </div>
+     <!--<div class="row mid-sec">-->
+        
+      <!--</div>-->
+      <div class="row" id="mid">
+       <form id="selectDate">
+        <input class="form-control" id="focusedInput" type="text" placeholder="Add your favorite weekday and month then add any year (no commas)...">
+        <!--<input class="form-control" id="date" type="text" placeholder="Add your favorite weekday and month then add any year(no commas)...">-->
+        <br>
+        <button type="button" class="btn btn-lg btn-info" id="add">Track Your Days</button>
+       </form>
+      </div>
+      <div id="footer" class="row">
+        <div id="result1">
+          <br>
+          <p><span class="record"></span></P>
+          <p><span class="dates"></span>.</p>
+        </div>
+        <br>
+        <div id="result2">
+          <p> You have entered an invalid day, month, or year.</p>
+        </div>   
+      </div>
+    </div>
+
+    <!--<div class="container">
       <h1>Find the dates of your favorite weekday in a month for any year.</h1>
 
       <form id="selectDate">
@@ -26,6 +56,6 @@
       <div id="result2">
         <p> You have entered an invalid day, month, or year.</p>
       </div>
-    </div>
+    </div>-->
   </body>
 </html>
