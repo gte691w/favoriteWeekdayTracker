@@ -155,6 +155,9 @@ var getWeekdaysInMonth = function(day,month,year){
 	
 
 $(document).ready(function(){
+  $('form').submit(function(event){
+		event.preventDefault();
+	});
   $("#add").on('click', function(){
   	var inputInfo = $("#focusedInput").val();
   	$("#focusedInput").focus();
@@ -195,10 +198,13 @@ $(document).ready(function(){
 
   });
 
-  	 $("#focusedInput").on('keypress', function(e){
-		if (e.keyCode == '13'){
-		  $("#add").click();
+
+  	 $("#focusedInput").on('keypress', function(event){
+		if (event.keyCode === '13'){
+		  $("#button").click();
 			}
+
 	  });
+
 
 });	
