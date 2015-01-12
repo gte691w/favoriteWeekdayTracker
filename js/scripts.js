@@ -155,9 +155,9 @@ var getWeekdaysInMonth = function(day,month,year){
 	
 
 $(document).ready(function(){
-  $('form').submit(function(event){
+  $('form #focusedInput').submit(function(event){
 		event.preventDefault();
-	});
+	 });
   $("#add").on('click', function(){
   	var inputInfo = $("#focusedInput").val();
   	$("#focusedInput").focus();
@@ -175,7 +175,7 @@ $(document).ready(function(){
 
   	  if(checkDay === false || checkMonth === false || checkYear === false){
   		$("#focusedInput").val("");
-  		$("#result2").show().hide().slideDown();
+  		$("#result2").hide().slideDown(1500);
   		$("#result1").slideUp().hide();
   		}
   	  else{
@@ -185,7 +185,7 @@ $(document).ready(function(){
   	  	$(".record").text(inputInfo);
 	  	$(".dates").text(theDates);
 	  	$("#focusedInput").val("");
-		$("#result1").show().hide().slideDown();
+		$("#result1").slideDown(1500);
 		$("#result2").slideUp().hide();
 		
 	  }
@@ -197,11 +197,9 @@ $(document).ready(function(){
 	 
 
   });
-
-
   	 $("#focusedInput").on('keypress', function(event){
-		if (event.keyCode === '13'){
-		  $("#button").click();
+		if (event.keyCode == 13){
+		  $("#add").click();
 			}
 
 	  });
