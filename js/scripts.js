@@ -155,7 +155,7 @@ var getWeekdaysInMonth = function(day,month,year){
 	
 
 $(document).ready(function(){
-  $('form #focusedInput').submit(function(event){
+  $('form').submit(function(event){
 		event.preventDefault();
 	 });
   $("#add").on('click', function(){
